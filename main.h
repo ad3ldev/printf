@@ -8,7 +8,6 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void print_number(int n);
 void _puts(char *str);
 extern int count;
 
