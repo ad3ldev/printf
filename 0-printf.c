@@ -32,6 +32,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				i++;
+				count++;
 				continue;
 			} else if (format[i + 1] == 'd')
 			{
