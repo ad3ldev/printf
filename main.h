@@ -9,5 +9,7 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 void _puts(char *new_string);
+int print_d(int n);
+int print_i(int n);
 
 #endif
