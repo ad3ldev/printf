@@ -4,7 +4,7 @@
  * _printf - Prints output acording to an input format.
  * @format: Pointer to a formated string
  *
- * Return: number of characters printed to the screen
+ * Return: number of characters printed to the screen or -1 if error
  */
 int _printf(const char *format, ...)
 {
@@ -13,6 +13,8 @@ int _printf(const char *format, ...)
 
 	count = 0;
 	va_start(next, format);
+	if (format[0] == '%' && format[1] == '\0')
+			return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
