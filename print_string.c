@@ -8,23 +8,25 @@
  */
 void _puts(char *new_string)
 {
+	int i;
+
 	for (i = 0; new_string[i] != '\0'; i++)
 	{
-		if (new_string[i] == '\' && new_string[i + 1] == '\')
+		if (new_string[i] == 92 && new_string[i + 1] == 92)
 		{
-			_putchar('\')
+			_putchar(92);
 			i += 1;
-		} else if (new_string[i] == '\' && new_string[i + 1] == 'n')
+		} else if (new_string[i] == 92 && new_string[i + 1] == 110)
 		{
 			_putchar('\n');
-			1 += 1;
-		} else if (new_string[i] == '\' && new_string[i + 1] == '"')
+			i += 1;
+		} else if (new_string[i] == 92 && new_string[i + 1] == 22)
 		{
-			_putchar('\"');
+			_putchar(22);
 			i += 1;
 		} else
 		{
-			_putchar(new_string[i];
+			_putchar(new_string[i]);
 		}
 	}
 }
