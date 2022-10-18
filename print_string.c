@@ -21,6 +21,7 @@ int _puts(char *new_string)
  * print_rev - prints string in reverse
  *
  * @s: string to be printed
+ * Return: count
  */
 int print_rev(char *s)
 {
@@ -37,6 +38,11 @@ int print_rev(char *s)
 	return (count);
 }
 
+/**
+ * rotate - prints 13th character after
+ * @s: string
+ * Return: count
+ */
 int rotate(char *s)
 {
 	int n, count, i;
@@ -47,7 +53,7 @@ int rotate(char *s)
 	count = 0;
 	if (s == NULL)
 		s = "(null)";
-	for(i = 0; i < _strlen(s); i++)
+	for (i = 0; i < _strlen(s); i++)
 	{
 		if (!_isalpha(s[i]))
 		{
