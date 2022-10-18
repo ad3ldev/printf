@@ -13,7 +13,7 @@ int print_d(int n, int count)
 		count += _putchar('-');
 		n *= -1;
 	}
-	if (n > 10)
+	if (n >= 10)
 	{
 		count = print_d(n / 10, count);
 	}
