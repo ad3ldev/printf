@@ -7,14 +7,14 @@
  */
 int print_d(int n)
 {
-	int count = 0, temp_number, zeros = 1;
+	unsigned int actual_number, count = 0, temp_number, zeros = 1;
 
 	if (n < 0)
 	{
 		count += _putchar('-');
-		n *= -1;
+		actual_number = n * -1;
 	}
-	temp_number = n;
+	temp_number = actual_number;
 	while (temp_number >= 10)
 	{
 		temp_number /= 10;
@@ -22,7 +22,7 @@ int print_d(int n)
 	}
 	while (zeros >= 1)
 	{
-		count += _putchar(((n / zeros) % 10) + '0');
+		count += _putchar(((actual_number / zeros) % 10) + '0');
 		zeros /= 10;
 	}
 	return (count);
