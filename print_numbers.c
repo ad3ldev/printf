@@ -16,7 +16,7 @@ int print_d(int n, int count)
 	}
 	if (n > 10)
 	{
-		count += print_d(n / 10, count);
+		count = print_d(n / 10, count);
 	}
 	_putchar(n % 10 + '0');
 	return (count + 1);
