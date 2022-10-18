@@ -11,5 +11,6 @@ int _putchar(char c);
 int _puts(char *new_string);
 int print_d(int n);
 int print_i(int n);
+int print_bin(int x);
 
 #endif
