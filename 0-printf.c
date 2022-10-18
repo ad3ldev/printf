@@ -25,7 +25,7 @@ int choose_function(char specifier, va_list next)
 			count += print_i(va_arg(next, int));
 			break;
 		default:
-			count += _putchar(specifier);
+			count += _putchar('%') +  _putchar(specifier);
 			break;
 	}
 	return (count);
