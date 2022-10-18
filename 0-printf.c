@@ -27,9 +27,10 @@ int _printf(const char *format, ...)
 			{
 				_putchar(va_arg(next, int));
 				i++;
+				count++;
 			} else if (format[i + 1] == 's')
 			{
-				_puts(va_arg(next, char *));
+				count += _puts(va_arg(next, char *));
 				i++;
 			} else if (format[i + 1] == '%')
 			{

@@ -8,6 +8,8 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-void _puts(char *str);
+int _puts(char *new_string);
+int print_d(int n, int count);
+int print_i(int n);
 
 #endif

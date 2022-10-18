@@ -2,16 +2,35 @@
 
 /**
  * _puts - Prints a string to stdout.
- * @str: Pointer to the string value to print.
+ * @new_string: Pointer to the string value to print.
  *
  * Return: None.
  */
-void _puts(char *str)
+int _puts(char *new_string)
 {
-	while (*str != '\0')
+	int i;
+	int count;
+
+	count = 0;
+	for (i = 0; new_string[i] != '\0'; i++)
 	{
-		_putchar(*str);
-		str++;
+		if (new_string[i] == 92 && new_string[i + 1] == 92)
+		{
+			_putchar(92);
+			i += 1;
+		} else if (new_string[i] == 92 && new_string[i + 1] == 110)
+		{
+			_putchar('\n');
+			i += 1;
+		} else if (new_string[i] == 92 && new_string[i + 1] == 22)
+		{
+			_putchar(22);
+			i += 1;
+		} else
+		{
+			_putchar(new_string[i]);
+		}
+		count++;
 	}
-	/* printf("\n"); */
+	return (count);
 }
