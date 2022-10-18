@@ -9,7 +9,9 @@
 void _puts(char *new_string)
 {
 	int i;
+	int count;
 
+	count = 0;
 	for (i = 0; new_string[i] != '\0'; i++)
 	{
 		if (new_string[i] == 92 && new_string[i + 1] == 92)
@@ -28,5 +30,6 @@ void _puts(char *new_string)
 		{
 			_putchar(new_string[i]);
 		}
+		count++;
 	}
 }
