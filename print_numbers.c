@@ -7,17 +7,14 @@
  */
 int print_d(int n)
 {
-	int count = 0;
+	int count = 0, temp_number, zeros = 1;
 
 	if (n < 0)
 	{
 		count += _putchar('-');
 		n *= -1;
 	}
-
-	int temp_number = n;
-	int zeros = 1;
-
+	temp_number = n;
 	while (temp_number >= 10)
 	{
 		temp_number /= 10;
