@@ -66,6 +66,7 @@ int rotate(char *s)
 			n = s[i] - 97;
 			n = (n + key) % 26;
 			_putchar(n + 97);
+			count++;
 		}
 		if (_isupper(s[i]))
 		{
