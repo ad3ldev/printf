@@ -14,5 +14,9 @@ int print_i(int n);
 int print_bin(unsigned int x);
 int _strlen(char *s);
 int print_rev(char *s);
+int rotate(char *);
+int _islower(int c);
+int _isupper(int c);
+int _isalpha(int c);
 
 #endif

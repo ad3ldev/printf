@@ -36,3 +36,38 @@ int print_rev(char *s)
 	}
 	return (count);
 }
+
+int rotate(char *s)
+{
+	int n, count, i;
+	int key;
+
+	n = 0;
+	key = 13;
+	count = 0;
+	if (s == NULL)
+		s = "(null)";
+	for(i = 0; i < _strlen(s); i++)
+	{
+		if (!_isalpha(s[i]))
+		{
+			_putchar(s[i]);
+			count++;
+		}
+
+		if (_islower(s[i]))
+		{
+			n = s[i] - 97;
+			n = (n + key) % 26;
+			_putchar(n + 97);
+		}
+		if (_isupper(s[i]))
+		{
+			n = s[i] - 65;
+			n = (n + key) % 26;
+			_putchar(n + 65);
+			count++;
+		}
+	}
+	return (count);
+}

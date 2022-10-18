@@ -30,6 +30,9 @@ int choose_function(char specifier, va_list next)
 		case 'r':
 			count += print_rev(va_arg(next, char *));
 			break;
+		case 'R':
+			count += rotate(va_arg(next, char *));
+			break;
 		default:
 			count += _putchar('%') +  _putchar(specifier);
 			break;
