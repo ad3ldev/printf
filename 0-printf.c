@@ -1,6 +1,38 @@
 #include "main.h"
 
 /**
+ * choose_function - choose which function to use to print
+ * @specifier: specifier character
+ * @next: the va_list that has the variables to be printed
+ * Return: number of characters printed
+ */
+int choose_function(char specifier, va_list next)
+{
+	int count = 0;
+
+	switch (specifier)
+	{
+		case 'c':
+			count += _putchar(va_arg(next, int));
+			break;
+		case 's':
+			count += _puts(va_arg(next, char *));
+			break;
+		case 'd':
+			count += print_d(va_arg(next, int), 0);
+			break;
+		case 'i':
+			count += print_i(va_arg(next, int));
+			break;
+		default:
+			count += _putchar(specifier);
+			break;
+	}
+	return (count);
+}
+
+
+/**
  * _printf - Prints output acording to an input format.
  * @format: Pointer to a formated string
  *
@@ -8,51 +40,39 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, count;
-	va_list next;
+	int count = -1;
 
-	count = 0;
-	va_start(next, format);
-	if (!format || (format[0] == '%' && !format[1]))
-		return (-1);
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-		return (-1);
-	if (format[0] == '%' && format[1] == '\0')
-		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+	if (format != NULL)
 	{
-		if (format[i] == '%')
+		int i;
+		va_list next;
+
+		va_start(next, format);
+		if (format[0] == '%' && format[1] == '\0')
+			return (count);
+		count = 0;
+		for (i = 0; format[i] != '\0'; i++)
 		{
-			if (format[i + 1] == 'c')
+			if (format[i] == '%')
 			{
-				_putchar(va_arg(next, int));
-				i++;
-				count++;
-			} else if (format[i + 1] == 's')
+				if (format[i + 1] == '%')
+				{
+					count += _putchar(format[i]);
+					i++;
+				}
+				else if (format[i + 1] != '\0')
+				{
+					count += choose_function(format[i + 1], next);
+					i++;
+				}
+			}
+			else
 			{
-				count += _puts(va_arg(next, char *));
-				i++;
-			} else if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				i++;
-				count++;
-			} else if (format[i + 1] == 'd')
-			{
-				count += print_d(va_arg(next, int), count);
-				i++;
-			} else if (format[i + 1] == 'i')
-			{
-				count += print_i(va_arg(next, int));
-				i++;
+				count += _putchar(format[i]);
 			}
 		}
-		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
+		va_end(next);
+
 	}
-	va_end(next);
 	return (count);
 }
