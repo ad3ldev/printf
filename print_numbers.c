@@ -25,7 +25,7 @@ int print_d(int n)
 		print_d(n / 10);
 		_putchar(n % 10 + '0');
 	}
-	return (count);
+	return (count + 1);
 }
 
 /**
