@@ -14,6 +14,8 @@ int print_d(int n)
 		count += _putchar('-');
 		actual_number = n * -1;
 	}
+	else
+		actual_number = n;
 	temp_number = actual_number;
 	while (temp_number >= 10)
 	{
