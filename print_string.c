@@ -6,7 +6,7 @@
  *
  * Return: None.
  */
-void _puts(char *new_string)
+int _puts(char *new_string)
 {
 	int i;
 	int count;
@@ -32,4 +32,5 @@ void _puts(char *new_string)
 		}
 		count++;
 	}
+	return (count);
 }
