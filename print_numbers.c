@@ -3,21 +3,31 @@
 /**
  * print_d - Prints a number to stdout.
  * @n: number to be printed
- * @count: counting of number;
  * Return: size of numnber
  */
-int print_d(int n, int count)
+int print_d(int n)
 {
+	int count = 0;
+
 	if (n < 0)
 	{
 		count += _putchar('-');
 		n *= -1;
 	}
-	if (n >= 10)
+
+	int temp_number = n;
+	int zeros = 1;
+
+	while (temp_number >= 10)
 	{
-		count = print_d(n / 10, count);
+		temp_number /= 10;
+		zeros *= 10;
 	}
-	count += _putchar(n % 10 + '0');
+	while (zeros >= 1)
+	{
+		count += _putchar(((n / zeros) % 10) + '0');
+		zeros /= 10;
+	}
 	return (count);
 }
 
@@ -28,5 +38,5 @@ int print_d(int n, int count)
  */
 int print_i(int n)
 {
-	return (print_d(n, 0));
+	return (print_d(n));
 }

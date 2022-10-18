@@ -19,7 +19,7 @@ int choose_function(char specifier, va_list next)
 			count += _puts(va_arg(next, char *));
 			break;
 		case 'd':
-			count += print_d(va_arg(next, int), 0);
+			count += print_d(va_arg(next, int));
 			break;
 		case 'i':
 			count += print_i(va_arg(next, int));
