@@ -8,29 +8,11 @@
  */
 int _puts(char *new_string)
 {
-	int i;
-	int count;
+	int i, count = 0;
 
-	count = 0;
+	if (new_string == NULL)
+		str = "(null)";
 	for (i = 0; new_string[i] != '\0'; i++)
-	{
-		if (new_string[i] == 92 && new_string[i + 1] == 92)
-		{
-			_putchar(92);
-			i += 1;
-		} else if (new_string[i] == 92 && new_string[i + 1] == 110)
-		{
-			_putchar('\n');
-			i += 1;
-		} else if (new_string[i] == 92 && new_string[i + 1] == 22)
-		{
-			_putchar(22);
-			i += 1;
-		} else
-		{
-			_putchar(new_string[i]);
-		}
-		count++;
-	}
+		count += _putchar(new_string[i]);
 	return (count);
 }
