@@ -10,6 +10,8 @@ int print_bin(int x)
 {
 	int tmp[64];
 	int i, j, count;
+
+	count = 0;
 	if (x == 0)
 	{
 		_putchar('0');
