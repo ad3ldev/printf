@@ -16,3 +16,23 @@ int _puts(char *new_string)
 		count += _putchar(new_string[i]);
 	return (count);
 }
+
+/**
+ * print_rev - prints string in reverse
+ *
+ * @s: string to be printed
+ */
+int print_rev(char *s)
+{
+	int i, count;
+
+	count = 0;
+	if (s == NULL)
+		s = "(null)";
+	for (i = (_strlen(s) - 1); i >= 0; i--)
+	{
+		_putchar(s[i]);
+		count++;
+	}
+	return (count);
+}

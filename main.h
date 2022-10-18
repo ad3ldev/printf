@@ -12,5 +12,7 @@ int _puts(char *new_string);
 int print_d(int n);
 int print_i(int n);
 int print_bin(unsigned int x);
+int _strlen(char *s);
+int print_rev(char *s);
 
 #endif

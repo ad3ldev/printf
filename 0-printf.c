@@ -27,6 +27,9 @@ int choose_function(char specifier, va_list next)
 		case 'b':
 			count += print_bin(va_arg(next, int));
 			break;
+		case 'r':
+			count += print_rev(va_arg(next, char *));
+			break;
 		default:
 			count += _putchar('%') +  _putchar(specifier);
 			break;
