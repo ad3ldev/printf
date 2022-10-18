@@ -12,17 +12,21 @@ int print_d(int n, int count)
 	{
 		_putchar('-');
 		n *= -1;
+		count++;
 	}
 	if (n > 10)
 	{
-		count = print_d(n / 10, count);
+		print_d(n / 10, count);
+		count++;
 	}
 	_putchar(n % 10 + '0');
 	return (count + 1);
 }
 
 /**
-	@@ -28,5 +35,5 @@ int print_d(int n, int count)
+ * print_i - Prints a int to stdout.
+ * @n: number to be printed
+ * Return: size of numnber
  */
 int print_i(int n)
 {

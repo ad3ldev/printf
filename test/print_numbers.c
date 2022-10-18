@@ -6,26 +6,21 @@
  * @count: counting of number;
  * Return: size of numnber
  */
-int print_d(int n)
+int print_d(int n, int count)
 {
-	int count;
-
-	count = 0;
 	if (n < 0)
 	{
 		_putchar('-');
 		n *= -1;
-	}
-	if (n < 10)
-	{
-		_putchar(n % 10 + '0');
 		count++;
-	} else
-	{
-		print_d(n / 10);
-		_putchar(n % 10 + '0');
 	}
-	return (count);
+	if (n > 10)
+	{
+		print_d(n / 10, count);
+		count++;
+	}
+	_putchar(n % 10 + '0');
+	return (count + 1);
 }
 
 /**
@@ -35,5 +30,5 @@ int print_d(int n)
  */
 int print_i(int n)
 {
-	return (print_d(n));
+	return (print_d(n, 0));
 }
