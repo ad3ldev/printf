@@ -15,6 +15,7 @@ int print_d(int n)
 	{
 		_putchar('-');
 		n *= -1;
+		count++;
 	}
 	if (n < 10)
 	{
@@ -24,6 +25,7 @@ int print_d(int n)
 	{
 		print_d(n / 10);
 		_putchar(n % 10 + '0');
+		count++;
 	}
 	return (count + 1);
 }
