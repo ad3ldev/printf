@@ -6,7 +6,7 @@
  * @x: number given
  * Return: count
  */
-int print_bin(int x)
+int print_bin(unsigned int x)
 {
 	int tmp[64];
 	int i, j, count;
@@ -18,16 +18,19 @@ int print_bin(int x)
 		count++;
 	}
 
-	for (i = 0 ; x > 0; i++)
+	if (x)
 	{
-		tmp[i] = x % 2;
-		x /= 2;
-	}
+		for (i = 0 ; x > 0; i++)
+		{
+			tmp[i] = x % 2;
+			x /= 2;
+		}
 
-	for (j = i-1; j >= 0; j--)
-	{
-		_putchar(tmp[j] + '0');
-		count++;
+		for (j = i - 1; j >= 0; j--)
+		{
+			_putchar(tmp[j] + '0');
+			count++;
+		}
 	}
 	return (count);
 }
